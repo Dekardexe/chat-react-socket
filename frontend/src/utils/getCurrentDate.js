@@ -6,4 +6,4 @@ export function getCurrentDate() {
    return hours + ":" + minutes;
 }
 
-module.exports = { getCurrentDate }
+// module.exports = { getCurrentDate }

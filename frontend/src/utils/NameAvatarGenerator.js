@@ -33,4 +33,4 @@ function getRandomWord(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-module.exports = {getUserAvatar, randomNameGenerator};
+// export {getUserAvatar, randomNameGenerator};
