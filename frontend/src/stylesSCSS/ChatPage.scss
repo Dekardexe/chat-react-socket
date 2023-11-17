@@ -1,0 +1,60 @@
+@import 'utils';
+
+
+
+.bottomField {
+   width: calc(100% - $user-list-width);
+   height: $input-height;
+   padding: 5px 0 0 0;
+   // background-color: $users-inList-color;
+   
+
+   .gridInputContainer{
+      display: grid;
+      grid-template-columns: $avatar-width calc(100% - 2 * $avatar-width) $avatar-width;
+      grid-auto-rows: minmax(0, auto);
+      padding: 10px ;
+      
+   }
+   
+   .inputMessage{
+      background-color: $input-color;
+      color: $text-color;
+      padding: 12px 10px;
+      outline: none;
+      border: none;
+   }
+
+   .submitButton{
+      justify-self: flex-end;
+      transform: rotate(45deg);
+      color: $text-color;
+      margin: 7px 25% 0 0 ;
+      
+      :hover {
+         color:rgb(200, 200, 200);
+      }
+   }
+   .inputField{
+      background-color: $input-color;
+      border-radius: 35px;
+      margin: 0 $message-list-padd + $message-marg;
+
+   }
+   .uploadClip{
+      color: $text-color;
+      padding: 5px 0 5px 20px;
+      transform: rotate(35deg);
+      :hover {
+         color:rgb(200, 200, 200);
+      }
+   }
+}
+
+@media screen and (max-width: 600px) {
+
+   .bottomField {
+      width: 100%;
+   }
+}
+

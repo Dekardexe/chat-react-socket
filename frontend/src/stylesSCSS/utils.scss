@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Roboto', sans-serif;
+   font-size: 15px;
+}
+
+body {
+   background-image: url("../assets/image/a2.jpg");
+   background-size: cover;
+   background-position: center;
+   // background-color:  rgb(27,38,42);
+}
+
+$user-list-width: 200px;
+$text-color: white;
+$secondary-text-color: white;
+//users in USERLIST
+// $users-inList-color: rgb(67, 73, 129);
+$users-inList-color: rgb(64, 71, 73);
+//input
+$input-color: rgb(33, 33, 33);
+//фон сообщения и дата
+$message-color:  rgb(64, 71, 73);
+$myMessage-color: rgb(119, 126, 187);
+
+// //users in USERLIST
+//темно-зеленый rgb(27,38,42)
+// border rgb(29,147,171)
+//серый фон rgb(30,30,30)
+
+// //input
+// $input-color: rgb(27,38,42);
+// //фон сообщения и дата
+// $message-color:  rgb(70,70,70);;
+
+
+
+// //users in USERLIST
+// $users-inList-color: #C2C8C5 ;
+// //input
+// $input-color: #DDDDDA ;
+// //фон сообщения и дата
+// $message-color: #7697A0;
+
+
+
+// //users in USERLIST
+// $users-inList-color:  #8794C0;
+// //input 
+// $input-color: # ;
+// //фон сообщения и дата
+// $message-color: #1C2135;
+
+// //users in USERLIST
+// $users-inList-color:  #FB7B8E;
+// //input 
+// $input-color: #031B88 ;
+// фон сообщения и дата
+// $message-color: #AAB6FB;
+
+// //users in USERLIST
+// $users-inList-color:  #050831;
+// //input 
+// $input-color: #E1035A ;
+// //фон сообщения и дата
+// $message-color: #133072;
+
+
+$avatar-width: 60px;
+$input-height: 75px;
+$message-list-padd: 20px;
+$message-marg: 10px;
+$font: 'Roboto', sans-serif;
+$adaptive-UL-height: 104px;

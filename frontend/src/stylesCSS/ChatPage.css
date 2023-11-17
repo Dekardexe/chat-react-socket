@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+}
+
+.bottomField {
+  width: calc(100% - 200px);
+  height: 75px;
+  padding: 5px 0 0 0;
+}
+.bottomField .gridInputContainer {
+  display: grid;
+  grid-template-columns: 60px calc(100% - 120px) 60px;
+  grid-auto-rows: minmax(0, auto);
+  padding: 10px;
+}
+.bottomField .inputMessage {
+  background-color: rgb(33, 33, 33);
+  color: white;
+  padding: 12px 10px;
+  outline: none;
+  border: none;
+}
+.bottomField .submitButton {
+  justify-self: flex-end;
+  transform: rotate(45deg);
+  color: white;
+  margin: 8px 25% 0 0;
+}
+.bottomField .submitButton :hover {
+  color: rgb(200, 200, 200);
+}
+.bottomField .inputField {
+  background-color: rgb(33, 33, 33);
+  border-radius: 35px;
+  margin: 0 30px;
+}
+.bottomField .uploadClip {
+  color: white;
+  padding: 5px 0 5px 20px;
+  transform: rotate(35deg);
+}
+.bottomField .uploadClip :hover {
+  color: rgb(200, 200, 200);
+}
+
+@media screen and (max-width: 600px) {
+  .bottomField {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=ChatPage.css.map */

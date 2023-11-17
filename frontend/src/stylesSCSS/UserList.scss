@@ -1,0 +1,72 @@
+@import 'utils';
+
+
+.userList {
+   position: absolute;
+   top: 0;
+   right: 0;
+   display: flex;
+   flex-direction: column;
+   width: $user-list-width;
+   height: 100%;
+
+   // background-color: $input-color;
+   background-color: rgba(0, 0, 0, 0.6);
+   color: $secondary-text-color;
+   overflow: auto;
+
+   h1 {
+      margin: 7px;
+   }
+
+   .userInList {
+      display: flex;
+      padding: 5px;
+      border-radius: 20px;
+      border: 2px solid rgb(117, 112, 187);
+      margin: 4px 2.5px;
+      background-color: $users-inList-color;
+
+      .userNameInList {
+         margin: 0 0 0 10px;
+         display: flex;
+         align-items: center;
+      }
+   }
+
+   img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+
+   }
+
+   
+}
+
+@media screen and (max-width: 600px) {
+   .userList {
+      position: static;
+      width: 100%;
+      height: $adaptive-UL-height;
+      // background-color: unset;    
+      background-color: rgba(0, 0, 0, 0.3);
+      // border-bottom: 2px solid blue;
+
+
+      .userCounter {
+         display: none;
+      }
+
+      .userGridContainer {
+         display: grid;
+         grid-auto-flow: column;
+         // grid-template-columns: repeat(1fr 1fr);
+         grid-template-rows: 1fr 1fr;
+      }
+
+      .userNameInList {
+         white-space: nowrap;
+      }
+   }
+}
