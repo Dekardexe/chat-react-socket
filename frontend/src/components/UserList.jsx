@@ -22,6 +22,7 @@ const UserList = () => {
 
    useEffect(() => {
       const userName = randomNameGenerator();
+
       new Promise(function (res, _rej) {
          res(getUserAvatar());
       }).then(
@@ -32,9 +33,8 @@ const UserList = () => {
       ).catch((error) => {
          console.log(error)
       });
+
    }, [])
-
-
 
 
    return (

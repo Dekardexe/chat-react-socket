@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react'
-import '../stylesCSS/UserList.css'
-import '../stylesCSS/MediaQueries.css'
-import loader from '../assets/preloader/22.gif'
+import React, { useState, useEffect, useRef } from 'react';
+import '../stylesCSS/UserList.css';
+import '../stylesCSS/MediaQueries.css';
+import loader from '../assets/preloader/22.gif';
 
 const User = (props) => {
 
@@ -11,7 +11,7 @@ const User = (props) => {
    useEffect(() => {
       const img = imgRef.current;
       const handleImageLoad = () => {
-         setIsLoading(false)
+         setIsLoading(false);
       };
 
       if (img) {

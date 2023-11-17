@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import socket from '../socket/socket';
 import '../stylesCSS/JoinPage.css';
 

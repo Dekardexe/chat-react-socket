@@ -1,7 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import socket from '../socket/socket';
-import { useSelector } from 'react-redux';
 import UserList from './UserList';
 import { BsPaperclip, BsSend } from 'react-icons/bs';
 import '../stylesCSS/MediaQueries.css';
@@ -13,22 +12,11 @@ import { getCurrentDate } from '../utils/getCurrentDate';
 
 
 const ChatPage = () => {
-   const [input, setInput] = useState();
 
+   const [input, setInput] = useState();
    const allMessages = useMessageList();
 
-   useEffect(() => {
-      const el = document.querySelector('.list');
-      if ((el.scrollHeight - el.scrollTop) < window.innerHeight * 2) {
-         el.scrollBy(0, el.scrollHeight);
-      }
-   }, [allMessages])
 
-   const handleKeyPress = (event) => {
-      if (event.key === 'Enter') {
-         submitInputs();
-      }
-   };
 
    function submitInputs() {
       const fileInput = document.getElementById('fileInput').files;
@@ -43,22 +31,36 @@ const ChatPage = () => {
                   res(reader.result);
                };
                reader.onerror = () => {
-                  rej(new Error)
+                  rej(new Error);
                }
             }).then(
-               image => {
+               (image) => {
                   socket.emit('sendMessage', input, getCurrentDate(), image)
                }
             ).catch(error => console.log(error))
+
          }
          else {
             socket.emit('sendMessage', input, getCurrentDate())
          }
+
          document.getElementById('fileInput').value = "";
          setInput("");
       }
    }
 
+   useEffect(() => {
+      const el = document.querySelector('.list');
+      if ((el.scrollHeight - el.scrollTop) < window.innerHeight * 2) {
+         el.scrollBy(0, el.scrollHeight);
+      }
+   }, [allMessages])
+
+   const handleKeyPress = (event) => {
+      if (event.key === 'Enter') {
+         submitInputs();
+      }
+   };
 
    function chooseFileTrigger() {
       document.getElementById("fileInput").click();

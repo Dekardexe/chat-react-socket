@@ -5,5 +5,3 @@ export function getCurrentDate() {
    const minutes = (Math.floor(date.getMinutes() / 10)) < 1 ? ("0" + date.getMinutes()) : date.getMinutes();
    return hours + ":" + minutes;
 }
-
-// module.exports = { getCurrentDate }

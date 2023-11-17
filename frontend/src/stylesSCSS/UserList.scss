@@ -1,6 +1,5 @@
 @import 'utils';
 
-
 .userList {
    position: absolute;
    top: 0;
@@ -38,7 +37,7 @@
       width: 30px;
       height: 30px;
       border-radius: 50%;
-
+      border: 2px solid rgb(117, 112, 187);
    }
 
    
@@ -49,10 +48,7 @@
       position: static;
       width: 100%;
       height: $adaptive-UL-height;
-      // background-color: unset;    
       background-color: rgba(0, 0, 0, 0.3);
-      // border-bottom: 2px solid blue;
-
 
       .userCounter {
          display: none;
@@ -61,7 +57,6 @@
       .userGridContainer {
          display: grid;
          grid-auto-flow: column;
-         // grid-template-columns: repeat(1fr 1fr);
          grid-template-rows: 1fr 1fr;
       }
 

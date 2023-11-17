@@ -7,6 +7,7 @@ import ModalImage from './ModalImage';
 
 
 const Message = (props) => {
+   
    const thisUser = useSelector((state) => state.userStore.thisUser);
    const isMe = ((thisUser.name === props.message.name) && (thisUser.avatar === props.message.avatar)) ?
                 "myMessage" : "message";

@@ -1,6 +1,6 @@
-import React from 'react'
-import '../stylesCSS/ModalImage.css'
-import '../stylesCSS/MediaQueries.css'
+import React from 'react';
+import '../stylesCSS/ModalImage.css';
+import '../stylesCSS/MediaQueries.css';
 
 const ModalImage = (props) => {
 
