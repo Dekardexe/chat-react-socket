@@ -3,7 +3,7 @@ const MALE_ANIMALS = [`конь`, `слон`, `бык`, `индюк`, `паук`
 const ADJECTIVES = [`Радиоактивн`, `Красив`, `Сильн`, `Смел`, `Умн`, `Грозн`, `Свиреп`, `Добр`, `Ехидн`, `Замечательн`];
 
 
-async function getUserAvatar() {
+export async function getUserAvatar() {
   const charset = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const storage = [];
   
@@ -25,7 +25,7 @@ async function getUserAvatar() {
   // return avatar.url;
 }
 
-function randomNameGenerator() {
+export function randomNameGenerator() {
   const isMale = !!Math.floor(Math.random() * 2);
   return getRandomWord(ADJECTIVES) + ((isMale) ? "ый " + getRandomWord(MALE_ANIMALS) : "ая " + getRandomWord(FEMININE_ANIMALS));
 }
