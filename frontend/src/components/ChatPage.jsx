@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useEffect, useState } from 'react';
 import socket from '../socket/socket';
+import { useSelector } from 'react-redux';
 import UserList from './UserList';
 import { BsPaperclip, BsSend } from 'react-icons/bs';
 import '../stylesCSS/MediaQueries.css';
@@ -12,42 +13,9 @@ import { getCurrentDate } from '../utils/getCurrentDate';
 
 
 const ChatPage = () => {
-
    const [input, setInput] = useState();
    const allMessages = useMessageList();
-
-
-
-   function submitInputs() {
-      const fileInput = document.getElementById('fileInput').files;
-
-      if ((input) && (input.match(/\S/)) || (fileInput.length)) {
-         if (fileInput.length) {
-            const reader = new FileReader();
-            reader.readAsDataURL(fileInput[0]);
-
-            new Promise((res, rej) => {
-               reader.onload = () => {
-                  res(reader.result);
-               };
-               reader.onerror = () => {
-                  rej(new Error);
-               }
-            }).then(
-               (image) => {
-                  socket.emit('sendMessage', input, getCurrentDate(), image)
-               }
-            ).catch(error => console.log(error))
-
-         }
-         else {
-            socket.emit('sendMessage', input, getCurrentDate())
-         }
-
-         document.getElementById('fileInput').value = "";
-         setInput("");
-      }
-   }
+   const inputRef = useRef();
 
    function anyKeyPressHandler(event) {
       console.log(event)
@@ -80,6 +48,36 @@ const ChatPage = () => {
       }
    };
 
+   function submitInputs() {
+      const fileInput = document.getElementById('fileInput').files;
+
+      if ((input) && (input.match(/\S/)) || (fileInput.length)) {
+         if (fileInput.length) {
+            const reader = new FileReader();
+            reader.readAsDataURL(fileInput[0]);
+
+            new Promise((res, rej) => {
+               reader.onload = () => {
+                  res(reader.result);
+               };
+               reader.onerror = () => {
+                  rej(new Error)
+               }
+            }).then(
+               image => {
+                  socket.emit('sendMessage', input, getCurrentDate(), image)
+               }
+            ).catch(error => console.log(error))
+         }
+         else {
+            socket.emit('sendMessage', input, getCurrentDate())
+         }
+         document.getElementById('fileInput').value = "";
+         setInput("");
+      }
+   }
+
+
    function chooseFileTrigger() {
       document.getElementById("fileInput").click();
    }
@@ -110,7 +108,9 @@ const ChatPage = () => {
                      maxLength="2000"
                      value={input}
                      onChange={(event) => { setInput(event.target.value); }}
-                     onKeyUp={handleKeyPress} />
+                     onKeyUp={handleKeyPress}
+                     ref={inputRef}
+                  />
 
                   <div
                      className='submitButton'
