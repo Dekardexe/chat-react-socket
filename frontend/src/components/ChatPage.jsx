@@ -49,6 +49,24 @@ const ChatPage = () => {
       }
    }
 
+   function anyKeyPressHandler(event) {
+      console.log(event)
+      if(event.key != "Escape"){
+         inputRef.current.focus();
+      }
+      else {
+         inputRef.current.blur();
+      }
+   }
+
+   useEffect(() => {
+      document.body.addEventListener("keydown", anyKeyPressHandler)
+      console.log(`asd`)
+      return () => {
+         document.body.removeEventListener("keydown", anyKeyPressHandler)
+      }
+   }, [])
+
    useEffect(() => {
       const el = document.querySelector('.list');
       if ((el.scrollHeight - el.scrollTop) < window.innerHeight * 2) {
